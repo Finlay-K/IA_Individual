@@ -1,0 +1,10 @@
+filetype==1.2.0
+joblib==1.5.1
+numpy==2.3.2
+pillow==11.3.0
+psutil==7.0.0
+python-magic==0.4.27
+scikit-learn==1.7.1
+scipy==1.16.1
+threadpoolctl==3.6.0
+python-magic-bin; sys_platform == "win32"
