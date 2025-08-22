@@ -1,0 +1,1 @@
+python-magic-bin; sys_platform == "win32"

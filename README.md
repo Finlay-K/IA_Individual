@@ -76,11 +76,16 @@ You should now see `(venv)` at the start of your terminal prompt. This means the
 
 ### Step 4: Install Dependencies
 
+
+
 Once the virtual environment is activated, install the required libraries:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt && pip install -r requirements_deps.txt
 ```
+- requirements.txt: Contains the main dependencies for the project.
+- requirements_deps.txt: Contains dependencies that must be installed after those in requirements.txt (required since pip does not guarantee installation order).
+- Always install requirents.txt first, then requirements_deps.txt.
 
 If new packages are needed later, install them and then update the `requirements.txt` file.
 
@@ -91,7 +96,7 @@ pip install pandas
 pip freeze > requirements.txt
 ```
 
-> **Note:** This captures *all installed packages*, including indirect ones. It's easy, but may include more than you expect.
+> **Note:** This captures *all installed packages*, including indirect ones. It's easy, but may include more than you expect. You may need to move some packages to requirements_deps.txt to maintain dependencies. 
 
 #### Option 2: Using `uv` (recommended for curated dependencies)
 
@@ -104,8 +109,8 @@ uv pip compile pyproject.toml -o requirements.txt
 > **Team Note:** `requirements.txt` should remain the single source of truth for group development since not everyone may be comfortable using uv.  
 > If you use `uv` locally, **always export updates to `requirements.txt` before committing or sharing**.
 
-### Step 4: Install shared libraries
-The `libmagic` library is required by `python-magic` and may need to be installed. Installation steps vary depending on your OS and/or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
+### Step 4: Install shared libraries on Linux
+The `libmagic` library is required by `python-magic` and may need to be installed on Linux or macOS. Installation steps vary depending on your OS or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
 ```bash
 sudo apt update && sudo apt install libmagic1
 ```
