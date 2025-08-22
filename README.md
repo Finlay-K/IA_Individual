@@ -105,7 +105,7 @@ uv pip compile pyproject.toml -o requirements.txt
 > If you use `uv` locally, **always export updates to `requirements.txt` before committing or sharing**.
 
 ### Step 4: Install shared libraries
-The `libmagic` library is required by `python-magic` and may need to be installed if you're not running the application on Windows. Installation steps vary depending on the Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
+The `libmagic` library is required by `python-magic` and may need to be installed. Installation steps vary depending on your OS and/or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
 ```bash
 sudo apt update && sudo apt install libmagic1
 ```
