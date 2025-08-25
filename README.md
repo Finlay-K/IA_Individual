@@ -1,6 +1,6 @@
 # Digital Forensics Agent Part 1 - Group Project - Project Proposal
 
-This project contains shared benchmarking tools and agent prototypes for the *Intelligent Agents* group project.
+This repository contains benchmarking tools and prototype agents for the Digital Forensics Agent group project in the Intelligent Agents module. It is intended for experimentation with file-type detection, metadata extraction, and learning-based classification.
 
 
 ## Project Structure
