@@ -20,7 +20,7 @@ IA-GROUP-E/
 └── README.md                       # You're reading it!
 ```
 
-Feel free to add to this structure but remember to update this file to keep everyting documented.
+Feel free to add to this structure but remember to update this file to keep everything documented.
 
 
 ## Getting Started
