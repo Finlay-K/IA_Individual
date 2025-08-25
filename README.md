@@ -109,7 +109,7 @@ uv pip compile pyproject.toml -o requirements.txt
 > **Team Note:** `requirements.txt` should remain the single source of truth for group development since not everyone may be comfortable using uv.  
 > If you use `uv` locally, **always export updates to `requirements.txt` before committing or sharing**.
 
-### Step 4: Install shared libraries on Linux
+### Step 5: Install shared libraries on Linux
 The `libmagic` library is required by `python-magic` and may need to be installed on Linux or macOS. Installation steps vary depending on your OS or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
 ```bash
 sudo apt update && sudo apt install libmagic1
@@ -118,7 +118,7 @@ sudo apt update && sudo apt install libmagic1
 Its located in `file-libs` on Fedora and CentOS and is part of the `file` package on Nix and Arch.
 
 
-### Step 5: (Optional) Using the Virtual Environment in VS Code
+### Step 6: (Optional) Using the Virtual Environment in VS Code
 
 If you're using **VS Code**:
 
