@@ -14,7 +14,7 @@ from typing import Dict, Optional, Tuple
 # ---- DEFAULT (for UNC paths) ----
 DEFAULT_ROOTS = [Path(r"C:\Users\Finn\OneDrive\Documents\Masters\Module 4 - IA\Drive")]           # DEFAULT SOURCE FOLDER THAT AGENT WILL CHECK
 DEFAULT_DEST  = Path(r"C:\Users\Finn\OneDrive\Documents\Masters\Module 4 - IA\IA_Copy")           # DEFAULT DESTINATION FOR COPIED FILES
-DEFAULT_TYPES = "images"                                                                          # IMAGE RULE DEFINED FOR PROOF OF CONCEPT
+DEFAULT_TYPES = "images"                                                                          # IMAGE RULE DEFINED FOR THIS SCENARIO
 
 
 # ---- Type identification ----
@@ -279,3 +279,4 @@ def main():
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
     sys.exit(main())
+
