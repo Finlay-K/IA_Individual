@@ -1,1 +1,177 @@
-For your individual project.
+# Digital Forensics Agent Part 2 - Individual Project
+
+This repository contains benchmarking tools and prototype agents for the Digital Forensics Agent project in the Intelligent Agents module. It is intended for experimentation with file-type detection, metadata extraction, and learning-based classification.
+
+
+## Project Structure
+
+```
+IA-GROUP-E/
+├── proposal/                       # Shared experiments, benchmarks, and utilities
+│   ├── benchmarks/                 # Performance tests for libraries and approaches
+│   │   └── mock_data/              # Mock data for shared testing
+│   ├── agents/                     # Agent prototypes
+│   ├── benchmark_runner.py         # Benchmark runner helper with CLI support
+│   └── benchmark_runner_select.py  # Benchmark runner with interactive selection
+│
+├── project/                        # For individual projects after forking the repo
+│
+├── requirements.txt                # Python dependencies
+└── README.md                       # You're reading it!
+```
+
+
+### Prerequisites
+
+- Python 3.11+ installed
+- VS Code installed (optional, but recommended)
+
+### Step 1: Clone the project
+
+```bash
+git clone https://github.com/jaco-uoeo/ia-group-e.git
+```
+
+### Step 2: Create a Virtual Environment
+
+Open a terminal in the root project folder (where this README.md file is located) and run:
+
+```bash
+cd ia-group-e
+python -m venv venv
+```
+
+This will create a folder named `venv/` containing your isolated Python environment.
+
+
+
+### Step 3: Activate the Virtual Environment
+
+**On Windows (Command Prompt):**
+
+```bash
+venv\Scripts\activate
+```
+
+**On Windows (PowerShell):**
+
+```bash
+.\venv\Scripts\Activate.ps1
+```
+
+**On macOS/Linux:**
+
+```bash
+source venv/bin/activate
+```
+
+You should now see `(venv)` at the start of your terminal prompt. This means the virtual environment is active.
+
+
+### Step 4: Install Dependencies
+
+
+
+Once the virtual environment is activated, install the required libraries:
+
+```bash
+pip install -r requirements.txt && pip install -r requirements_deps.txt
+```
+- requirements.txt: Contains the main dependencies for the project.
+- requirements_deps.txt: Contains dependencies that must be installed after those in requirements.txt (required since pip does not guarantee installation order).
+- Always install requirents.txt first, then requirements_deps.txt.
+
+If new packages are needed later, install them and then update the `requirements.txt` file.
+
+#### Option 1: Using pip (simple and common)
+
+```bash
+pip install pandas
+pip freeze > requirements.txt
+```
+
+> **Note:** This captures *all installed packages*, including indirect ones. It's easy, but may include more than you expect. You may need to move some packages to requirements_deps.txt to maintain dependencies. 
+
+#### Option 2: Using `uv` (recommended for curated dependencies)
+
+If you're using [`uv`](https://github.com/astral-sh/uv), make sure to regenerate `requirements.txt` from your `pyproject.toml` to keep the dependency list clean and reliable:
+
+```bash
+uv pip compile pyproject.toml -o requirements.txt
+```
+
+> **Team Note:** `requirements.txt` should remain the single source of truth for group development since not everyone may be comfortable using uv.  
+> If you use `uv` locally, **always export updates to `requirements.txt` before committing or sharing**.
+
+### Step 5: Install shared libraries on Linux
+The `libmagic` library is required by `python-magic` and may need to be installed on Linux or macOS. Installation steps vary depending on your OS or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
+```bash
+sudo apt update && sudo apt install libmagic1
+```
+
+Its located in `file-libs` on Fedora and CentOS and is part of the `file` package on Nix and Arch.
+
+
+### Step 6: (Optional) Using the Virtual Environment in VS Code
+
+If you're using **VS Code**:
+
+1. Open the root folder in VS Code.
+2. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).
+3. Search for and select: `Python: Select Interpreter`.
+4. Choose the interpreter that starts with `.venv` or `./venv` (usually labelled as recommended).
+
+Now, VS Code will use the virtual environment set up
+
+
+## Git Workflow (No Pull Requests)
+
+This project does not use pull requests — changes are merged directly into `main` after benchmarking.
+
+### Step-by-step:
+
+```bash
+# Clone the repository
+git clone <repo-url>
+cd <repo-directory>
+
+# Create a new feature branch
+git checkout -b feature/my-new-feature
+
+# Add and commit your changes
+git add .
+git commit -m "Added benchmark for xyz"
+
+# Push your feature branch to remote
+git push origin feature/my-new-feature
+
+# Merge the feature branch into main
+git checkout main
+git pull origin main        
+git merge feature/my-new-feature
+git push origin main
+
+# (Optional) Delete the feature branch
+git branch -d feature/my-new-feature
+git push origin --delete feature/my-new-feature
+```
+Or just use [GitHub Desktop](https://docs.github.com/en/desktop) for a nice GUI experience.
+
+## .gitignore
+
+This project excludes the following from Git commits:
+
+```
+__pycache__/
+*.pyc
+.env
+.venv
+venv
+.vscode/
+.idea/
+```
+
+
+## Need Help?
+
+Don’t hesitate to ask teammates if you get stuck. This repo is built to help you experiment, learn, and contribute effectively.
