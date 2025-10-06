@@ -119,14 +119,16 @@ Now, VS Code will use the virtual environment set up
 
 ### Running the benchmark_forensic_AI file
 To run this file, within the project directory use one of the following commands:
-
+```bash
 cd project
+```
+
 To simply run:
-
+```bash
 python benchmark_forensic_AI.py
+```
 
-
-### Example: Dry Run 
+### Example: Dry Run on local device
 ### (user must copy in their own directory path)
 ```bash
 python benchmark_forensic_AI.py "ROOT\FILE\PATH\HERE" `
