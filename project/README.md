@@ -26,6 +26,34 @@ pip install pillow exifread python-magic-bin
 - Python 3.11+ installed
 - VS Code installed (optional, but recommended)
 
+### Directory Structure
+
+By default, the agent uses:
+| Path            | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| `DEFAULT_ROOTS` | Source folder(s) to scan for matching files          |
+| `DEFAULT_DEST`  | Destination folder for copied files and audit logs   |
+| `DEFAULT_RULES` | Defines file types to match — e.g. all image formats |
+
+These locations should be amended to suit the user and their requirements
+
+Example (default configuration in code):
+```bash
+C:\Users\Finn\OneDrive\Documents\Masters\Module 4 - IA\Drive
+│
+└── [Agent scans this directory recursively]
+```
+
+Copies and logs will be created under:
+```bash
+C:\Users\Finn\OneDrive\Documents\Masters\Module 4 - IA\IA_Copy
+│
+├── All images
+│   └── [Original folder structure preserved]
+│
+└── audit_XXXXXXXX.csv
+```
+
 ### Step 1: Clone the project
 
 ```bash
