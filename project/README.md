@@ -10,14 +10,16 @@ The agent analyses each file’s MIME type, extension, and optional metadata bef
 
 The following Python packages are required:
 
+```bash
 pip install pillow exifread python-magic
-
+```
 
 Note:
-
 On Windows, use python-magic-bin instead of python-magic:
 
+```bash
 pip install pillow exifread python-magic-bin
+```
 
 ### Prerequisites
 
