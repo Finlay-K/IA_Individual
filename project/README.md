@@ -95,25 +95,12 @@ On Windows, use python-magic-bin instead of python-magic:
 pip install pillow exifread python-magic-bin
 ```
 
-#### Option 1: Using pip (simple and common)
+#### Using pip (simple and common)
 
 ```bash
 pip install pandas
 pip freeze > requirements.txt
 ```
-
-> **Note:** This captures *all installed packages*, including indirect ones. It's easy, but may include more than you expect. You may need to move some packages to requirements_deps.txt to maintain dependencies. 
-
-#### Option 2: Using `uv` (recommended for curated dependencies)
-
-If you're using [`uv`](https://github.com/astral-sh/uv), make sure to regenerate `requirements.txt` from your `pyproject.toml` to keep the dependency list clean and reliable:
-
-```bash
-uv pip compile pyproject.toml -o requirements.txt
-```
-
-> **Team Note:** `requirements.txt` should remain the single source of truth for group development since not everyone may be comfortable using uv.  
-> If you use `uv` locally, **always export updates to `requirements.txt` before committing or sharing**.
 
 ### Step 5: Install shared libraries on Linux
 The `libmagic` library is required by `python-magic` and may need to be installed on Linux or macOS. Installation steps vary depending on your OS or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
@@ -135,55 +122,10 @@ If you're using **VS Code**:
 
 Now, VS Code will use the virtual environment set up
 
-
-## Git Workflow (No Pull Requests)
-
-This project does not use pull requests — changes are merged directly into `main` after benchmarking.
-
-### Step-by-step:
-
+### Example: Dry Run
 ```bash
-# Clone the repository
-git clone <repo-url>
-cd <repo-directory>
-
-# Create a new feature branch
-git checkout -b feature/my-new-feature
-
-# Add and commit your changes
-git add .
-git commit -m "Added benchmark for xyz"
-
-# Push your feature branch to remote
-git push origin feature/my-new-feature
-
-# Merge the feature branch into main
-git checkout main
-git pull origin main        
-git merge feature/my-new-feature
-git push origin main
-
-# (Optional) Delete the feature branch
-git branch -d feature/my-new-feature
-git push origin --delete feature/my-new-feature
+python intelligent_file_agent.py "C:\Data" --dest "C:\Audit" --dry-run
 ```
-Or just use [GitHub Desktop](https://docs.github.com/en/desktop) for a nice GUI experience.
-
-## .gitignore
-
-This project excludes the following from Git commits:
-
-```
-__pycache__/
-*.pyc
-.env
-.venv
-venv
-.vscode/
-.idea/
-```
+No files are copied — only a log of intended actions is created.
 
 
-## Need Help?
-
-Don’t hesitate to ask teammates if you get stuck. This repo is built to help you experiment, learn, and contribute effectively.
