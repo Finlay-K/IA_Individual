@@ -1,4 +1,5 @@
 # Digital Forensics Agent Part 2 - Individual Project
+## Note - This is my first minor step into using github, folder structures and language used may not be correct
 
 This repository contains benchmarking tools and prototype agents for the Digital Forensics Agent project in the Intelligent Agents module. It is intended for experimentation with file-type detection, metadata extraction, and learning-based classification.
 
