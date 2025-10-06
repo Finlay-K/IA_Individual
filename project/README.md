@@ -116,11 +116,22 @@ If you're using **VS Code**:
 
 Now, VS Code will use the virtual environment set up
 
-### Example: Dry Run
+### Example: Dry Run 
+### (user must copy in their own directory path)
 ```bash
-python intelligent_file_agent.py "C:\Data" --dest "C:\Audit" --dry-run
+python benchmark_forensic_AI.py "ROOT\FILE\PATH\HERE" `
+  --dest "DEST\FILE\PATH\HERE" `
+  --dry-run
 ```
 No files are copied — only a log of intended actions is created.
+
+### For a full run
+This will copy all discovered images and keep folder structure intact
+```bash
+cd "ROOT\FILE\PATH\HERE"
+python benchmark_forensic_AI.py "ROOT\FILE\PATH\HERE" `
+  --dest "DEST\FILE\PATH\HERE" `
+```
 
 ### Audit Log Format
 
