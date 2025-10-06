@@ -2,24 +2,22 @@
 
 This repository contains benchmarking tools and prototype agents for the Digital Forensics Agent project in the Intelligent Agents module. It is intended for experimentation with file-type detection, metadata extraction, and learning-based classification.
 
+benchmark_forensic_AI.py is a Python-based intelligent agent designed to automatically identify, copy, and audit files (specifically images) from one or more source directories.
+The agent analyses each file’s MIME type, extension, and optional metadata before copying matching files to a structured destination directory. It also generates a CSV audit log recording all processed files, their SHA-256 hashes, sizes, and metadata.
 
-## Project Structure
 
-```
-IA-GROUP-E/
-├── proposal/                       # Shared experiments, benchmarks, and utilities
-│   ├── benchmarks/                 # Performance tests for libraries and approaches
-│   │   └── mock_data/              # Mock data for shared testing
-│   ├── agents/                     # Agent prototypes
-│   ├── benchmark_runner.py         # Benchmark runner helper with CLI support
-│   └── benchmark_runner_select.py  # Benchmark runner with interactive selection
-│
-├── project/                        # For individual projects after forking the repo
-│
-├── requirements.txt                # Python dependencies
-└── README.md                       # You're reading it!
-```
+### Dependencies
 
+The following Python packages are required:
+
+pip install pillow exifread python-magic
+
+
+Note:
+
+On Windows, use python-magic-bin instead of python-magic:
+
+pip install pillow exifread python-magic-bin
 
 ### Prerequisites
 
