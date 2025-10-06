@@ -95,12 +95,6 @@ On Windows, use python-magic-bin instead of python-magic:
 pip install pillow exifread python-magic-bin
 ```
 
-#### Using pip (simple and common)
-
-```bash
-pip install pandas
-pip freeze > requirements.txt
-```
 
 ### Step 5: Install shared libraries on Linux
 The `libmagic` library is required by `python-magic` and may need to be installed on Linux or macOS. Installation steps vary depending on your OS or Linux distribution, for example, on Debian, Ubuntu, or Linux Mint:
@@ -128,4 +122,24 @@ python intelligent_file_agent.py "C:\Data" --dest "C:\Audit" --dry-run
 ```
 No files are copied — only a log of intended actions is created.
 
+### Audit Log Format
+
+Each execution produces an audit CSV file in the destination directory:
+| Column      | Description                                   |
+| ----------- | --------------------------------------------- |
+| `time`      | UTC timestamp of processing                   |
+| `rule`      | Name of rule triggered (e.g. “All images”)    |
+| `src`       | Original source file path                     |
+| `mime`      | Detected MIME type                            |
+| `ext`       | File extension                                |
+| `sha256`    | File hash for integrity verification          |
+| `size`      | File size in bytes                            |
+| `copied_to` | Destination path or `(dry-run)` if not copied |
+| `metadata`  | JSON-formatted extracted metadata             |
+
+
+### Summary
+
+This intelligent agent provides a proof of concept for automated digital asset retrieval using rule-based logic and basic metadata reasoning.
+It can be easily extended to other file types, complex metadata searches, or integrated into multi-agent systems for more advanced autonomous workflows.
 
