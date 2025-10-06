@@ -126,6 +126,7 @@ python benchmark_forensic_AI.py "ROOT\FILE\PATH\HERE" `
 No files are copied — only a log of intended actions is created.
 
 ### For a full run
+### (user must copy in their own directory path)
 This will copy all discovered images and keep folder structure intact
 ```bash
 cd "ROOT\FILE\PATH\HERE"
