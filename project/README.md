@@ -5,22 +5,6 @@ This repository contains benchmarking tools and prototype agents for the Digital
 benchmark_forensic_AI.py is a Python-based intelligent agent designed to automatically identify, copy, and audit files (specifically images) from one or more source directories.
 The agent analyses each file’s MIME type, extension, and optional metadata before copying matching files to a structured destination directory. It also generates a CSV audit log recording all processed files, their SHA-256 hashes, sizes, and metadata.
 
-
-### Dependencies
-
-The following Python packages are required:
-
-```bash
-pip install pillow exifread python-magic
-```
-
-Note:
-On Windows, use python-magic-bin instead of python-magic:
-
-```bash
-pip install pillow exifread python-magic-bin
-```
-
 ### Prerequisites
 
 - Python 3.11+ installed
@@ -57,7 +41,7 @@ C:\Users\Finn\OneDrive\Documents\Masters\Module 4 - IA\IA_Copy
 ### Step 1: Clone the project
 
 ```bash
-git clone https://github.com/jaco-uoeo/ia-group-e.git
+git clone https://github.com/Finlay-K/IA_Individual.git
 ```
 
 ### Step 2: Create a Virtual Environment
@@ -65,11 +49,11 @@ git clone https://github.com/jaco-uoeo/ia-group-e.git
 Open a terminal in the root project folder (where this README.md file is located) and run:
 
 ```bash
-cd ia-group-e
+cd IA_Individual
 python -m venv venv
 ```
 
-This will create a folder named `venv/` containing your isolated Python environment.
+This will create a folder named `venv/` containing the Python environment.
 
 
 
@@ -98,18 +82,18 @@ You should now see `(venv)` at the start of your terminal prompt. This means the
 
 ### Step 4: Install Dependencies
 
-
-
-Once the virtual environment is activated, install the required libraries:
+The following Python packages are required:
 
 ```bash
-pip install -r requirements.txt && pip install -r requirements_deps.txt
+pip install pillow exifread python-magic
 ```
-- requirements.txt: Contains the main dependencies for the project.
-- requirements_deps.txt: Contains dependencies that must be installed after those in requirements.txt (required since pip does not guarantee installation order).
-- Always install requirents.txt first, then requirements_deps.txt.
 
-If new packages are needed later, install them and then update the `requirements.txt` file.
+Note:
+On Windows, use python-magic-bin instead of python-magic:
+
+```bash
+pip install pillow exifread python-magic-bin
+```
 
 #### Option 1: Using pip (simple and common)
 
