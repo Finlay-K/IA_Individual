@@ -130,6 +130,7 @@ python benchmark_forensic_AI.py
 
 ### Example: Dry Run on local device
 ### (user must copy in their own directory path)
+### I run this code in VSS using local directories via the virtual powershell environment
 ```bash
 python benchmark_forensic_AI.py "ROOT\FILE\PATH\HERE" `
   --dest "DEST\FILE\PATH\HERE" `
